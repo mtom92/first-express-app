@@ -1,11 +1,18 @@
 //require any needed modules
 var express = require ('express');
+var layouts = require ('express-ejs-layouts');
 
 //declare an express app
 var app = express();
 
 //serve my static folder
-app.use('/', express.static('public'))
+app.use('/', express.static('public'));
+
+//Enable body-parser
+app.use(express.urlencoded({extended: false}));
+
+//Enable express-ejs-layouts to use layouts.ejs
+app.use(layouts);
 
 //set the view engine
 app.set('view engine','ejs');
@@ -17,13 +24,8 @@ app.get('/',function(req,res,){
     foods: ['sushi', 'bbq','pozole'],
     favnumber:300,
      age :90});
-})
-
-
-
-app.get('/greeting/:name',function(req,res){
-  res.send('hello '+ req.params.name);
 });
+
 
 app.get('/:x/:y/:z', function(req,res){
   var result = req.params.x * req.params.y * req.params.z;

@@ -11,12 +11,24 @@ res.render('about/about', {
 });
 });
 
+//POST /About
+router.post('/', function(req,res){
+  console.log(req.body)
+  res.send('Post page')
+})
+
 //GET /about/me
 router.get('/me',function(req,res){
   res.render('about/me',{
     name:'Miguel'
   });
 });
+
+//GET /about/<anything>
+router.get('/:name',function(req,res){
+  res.send('hello '+ req.params.name);
+});
+
 
 //Enable ourselves to include these routes in another file
 module.exports = router

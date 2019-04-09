@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+
 <h1>Me page</h1>
  <h2>HELLO <%= name %> </h2>
-  </body>
-</html>
+ <h3>Sign up for the newsletter</h3>
+ <form  method="POST" action="/about">
+   <div>
+     <label> Email:</label>
+     <input name="email" type="email" placeholder="Your Email">
+   </div>
+   <input type="submit"  value="Spam Me!">
+ </form>
