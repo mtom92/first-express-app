@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="utf-8">
+    <title></title>
+      <% include ./partials/nav.ejs %>
+  </head>
+  <body>
+
+ <h1>HELLO <%= name %>!</h1>
+ <% if( favnumber >= 100){ %>
+   <h2>Your favorite number is <%= favnumber %> </h2>
+   <% } else { %>
+    <h2> Boo <%= favnumber %> IS BORING </h2>
+ <%} %>
+<h2>Your favorite foods are:</h2>
+<% foods.forEach(function(f){ %>
+  <p>You enjoy ... <%= f %></p>
+ <% }) %>
+ <p>You are <%= age * 7 %> in dog years </p>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+h1{
+  color: red;
+  background-color: purple;
+}
+
+body{
+  background-color: pink;
+}
+
+nav{
+  background-color: orange;
+  color:red;
+
+}
+
+nav ul li{
+display: inline;
+margin: 0 20px;
+}
